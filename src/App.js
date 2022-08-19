@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 
 const App = () => {
@@ -10,11 +10,12 @@ const App = () => {
             console.log(error);
         }
     };
-    return (
-        <div>
-            <button onClick={GetImages}>Get Images</button>
-        </div>
-    );
+
+    useEffect(() => {
+        GetImages();
+    }, []);
+
+    return <div>Whatch in Console</div>;
 };
 
 export default App;
